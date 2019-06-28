@@ -4,7 +4,6 @@ import { DeleteResult, getRepository, Repository } from 'typeorm';
 import { ArticleEntity } from './article.entity';
 import { Comment } from './comment.entity';
 import { UserEntity } from '../../core/user/user.entity';
-import { FollowsEntity } from '../../profile/follows.entity';
 import { CreateArticleDto } from './dto';
 
 import { ArticleRO, ArticlesRO, CommentsRO } from './article.interface';
@@ -19,9 +18,7 @@ export class ArticleService {
         @InjectRepository(Comment)
         private readonly commentRepository: Repository<Comment>,
         @InjectRepository(UserEntity)
-        private readonly userRepository: Repository<UserEntity>,
-        @InjectRepository(FollowsEntity)
-        private readonly followsRepository: Repository<FollowsEntity>
+        private readonly userRepository: Repository<UserEntity>
     ) {
     }
 
@@ -47,31 +44,6 @@ export class ArticleService {
             const ids = author.favorites.map(el => el.id);
             qb.andWhere("article.authorId IN (:ids)", {ids});
         }
-
-        qb.orderBy('article.created', 'DESC');
-
-        const articlesCount = await qb.getCount();
-
-        if ('limit' in query) {
-            qb.limit(query.limit);
-        }
-
-        if ('offset' in query) {
-            qb.offset(query.offset);
-        }
-
-        const articles = await qb.getMany();
-
-        return {articles, articlesCount};
-    }
-
-    async findFeed(userId: number, query): Promise<ArticlesRO> {
-        const _follows = await this.followsRepository.find({followerId: userId});
-        const ids = _follows.map(el => el.followingId);
-
-        const qb = await getRepository(ArticleEntity)
-            .createQueryBuilder('article')
-            .where('article.authorId IN (:ids)', {ids});
 
         qb.orderBy('article.created', 'DESC');
 
