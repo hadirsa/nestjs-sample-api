@@ -16,8 +16,8 @@
     "type": "git",
     "url": "git+https://github.com/hadirsa/nestjs-api-example.git"
   },
-  "author": "lu.jakob@googlemail.com",
-  "license": "ISC",
+  "author": "rasuli.hadi4@gmail.com",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/hadirsa/nestjs-api-example.git/issues"
   },
