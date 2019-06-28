@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-// import { CustomEmail } from '../user/CustomEmail';
+// import { CustomEmail } from '../core/user/CustomEmail';
 
 @Entity('follows')
 export class FollowsEntity {

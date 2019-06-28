@@ -1,7 +1,7 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { UserEntity } from '../user/user.entity';
+import { UserEntity } from '../core/user/user.entity';
 import { DeepPartial } from 'typeorm/common/DeepPartial';
 import { ProfileData, ProfileRO } from './profile.interface';
 import { FollowsEntity } from "./follows.entity";

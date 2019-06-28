@@ -1,21 +1,17 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
-import { ArticleModule } from './article/article.module';
-import { UserModule } from './user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
 import { ProfileModule } from './profile/profile.module';
-import { TagModule } from './tag/tag.module';
-import { BooksModule } from './books/books.module';
+import { CoreModule } from './core/core.module';
+import { EntitiesModule } from './entities/entities.module';
 
 @Module({
     imports: [
         TypeOrmModule.forRoot(),
-        ArticleModule,
-        UserModule,
+        CoreModule,
         ProfileModule,
-        TagModule,
-        BooksModule
+        EntitiesModule
     ],
     controllers: [
         AppController

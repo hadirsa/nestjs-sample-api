@@ -1,6 +1,6 @@
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { UserModule } from '../user/user.module';
+import { UserModule } from '../../core/user/user.module';
 import { TagService } from './tag.service';
 import { TagEntity } from './tag.entity';
 import { TagController } from './tag.controller';
