@@ -1,7 +1,7 @@
 {
-  "name": "nestjs-api-example",
+  "name": "nestjs-sample-api",
   "version": "1.0.0",
-  "description": "nestjs-api-example",
+  "description": "nestjs-sample-api",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

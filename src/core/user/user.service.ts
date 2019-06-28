@@ -1,4 +1,4 @@
-import { HttpStatus, Injectable } from '@nestjs/common';
+import { HttpStatus, Injectable, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { DeleteResult, getRepository, Repository } from 'typeorm';
 import { UserEntity } from './user.entity';
@@ -13,6 +13,8 @@ const jwt = require('jsonwebtoken');
 
 @Injectable()
 export class UserService {
+    private readonly logger = new Logger(UserService.name);
+
     constructor(
         @InjectRepository(UserEntity)
         private readonly userRepository: Repository<UserEntity>
@@ -25,10 +27,9 @@ export class UserService {
 
     async findOne(loginUserDto: LoginUserDto): Promise<UserEntity> {
         const findOneOptions = {
-            email: loginUserDto.email,
+            username: loginUserDto.username,
             password: crypto.createHmac('sha256', loginUserDto.password).digest('hex'),
         };
-
         return await this.userRepository.findOne(findOneOptions);
     }
 
