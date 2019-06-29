@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { ArticleModule } from './article/article.module';
+import { LabelModule } from './label/label.module';
 import { TagModule } from './tag/tag.module';
 import { BooksModule } from './books/books.module';
 
 @Module({
-    imports: [ArticleModule, TagModule, BooksModule],
+    imports: [LabelModule, TagModule, BooksModule],
     providers: [],
     controllers: [],
     exports: []

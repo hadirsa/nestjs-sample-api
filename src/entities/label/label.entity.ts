@@ -2,8 +2,8 @@ import { BeforeUpdate, Column, Entity, JoinColumn, ManyToOne, OneToMany, Primary
 import { UserEntity } from '../../core/user/user.entity';
 import { Comment } from './comment.entity';
 
-@Entity('article')
-export class ArticleEntity {
+@Entity('label')
+export class LabelEntity {
 
     @PrimaryGeneratedColumn()
     id: number;
@@ -34,13 +34,7 @@ export class ArticleEntity {
     @Column('simple-array')
     tagList: string[];
 
-    @ManyToOne(type => UserEntity, user => user.articles)
-    author: UserEntity;
-
-    @OneToMany(type => Comment, comment => comment.article, {eager: true})
+    @OneToMany(type => Comment, comment => comment.label, {eager: true})
     @JoinColumn()
     comments: Comment[];
-
-    @Column({default: 0})
-    favoriteCount: number;
 }

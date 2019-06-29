@@ -1,11 +1,11 @@
 import { UserData } from '../../core/user/user.interface';
-import { ArticleEntity } from './article.entity';
+import { LabelEntity } from './label.entity';
 
 interface Comment {
     body: string;
 }
 
-interface ArticleData {
+interface LabelData {
     slug: string;
     title: string;
     description: string;
@@ -22,12 +22,12 @@ export interface CommentsRO {
     comments: Comment[];
 }
 
-export interface ArticleRO {
-    article: ArticleEntity;
+export interface LabelRO {
+    label: LabelEntity;
 }
 
-export interface ArticlesRO {
-    articles: ArticleEntity[];
-    articlesCount: number;
+export interface LabelsRO {
+    labels: LabelEntity[];
+    labelsCount: number;
 }
 
