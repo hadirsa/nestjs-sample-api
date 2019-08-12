@@ -1,10 +1,10 @@
 import {MiddlewareConsumer, Module, NestModule, RequestMethod} from '@nestjs/common';
 import {BookController} from './book.controller';
 import {BookService} from './book.service';
-import {AuthMiddleware} from '../../core/auth/auth.middleware';
+import {AuthMiddleware} from '../core/auth/auth.middleware';
 import {TypeOrmModule} from '@nestjs/typeorm';
 import {BookEntity} from "./book.entity";
-import {UserModule} from "../../core/user/user.module";
+import {UserModule} from "../core/user/user.module";
 
 @Module({
     imports: [

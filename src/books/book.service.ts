@@ -1,6 +1,6 @@
 import {HttpException, Injectable, Logger} from '@nestjs/common';
 //import { BOOKS } from '../../shared/mocks/books.mock';
-import {BOOKS} from "../../shared/mocks/books.mock";
+import {BOOKS} from "../shared/mocks/books.mock";
 import {Repository, DeleteResult} from 'typeorm';
 import {InjectRepository} from '@nestjs/typeorm';
 import {BookEntity} from "./book.entity";
