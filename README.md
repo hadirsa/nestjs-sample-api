@@ -9,13 +9,6 @@
 
 ## Installation
 
-Clone the repository
-
-    git clone ...
-Switch to the repo folder
-
-    cd ..
-    
 Install dependencies
     
     npm install
@@ -67,7 +60,7 @@ On application start, tables for all entities will be created.
 ## Start application
 
 - `npm start`
-- Test api with `http://localhost:3000/api/books` in your favourite browser
+- Test api with `http://localhost:3001/api/books` in your favorite browser
 
 ----------
 

@@ -1,13 +1,7 @@
 import { Module } from '@nestjs/common';
-import { LabelModule } from './label/label.module';
-import { TagModule } from './tag/tag.module';
-import { BooksModule } from './books/books.module';
+import { BookModule } from './books/bookModule';
 
 @Module({
-    imports: [LabelModule, TagModule, BooksModule],
-    providers: [],
-    controllers: [],
-    exports: []
+    imports: [BookModule]
 })
-export class EntitiesModule {
-}
+export class EntitiesModule {}

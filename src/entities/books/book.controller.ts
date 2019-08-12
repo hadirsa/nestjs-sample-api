@@ -1,37 +1,34 @@
 import { Controller, Get, Param, Post, Body, Query, Delete } from '@nestjs/common';
-import { BooksService } from './books.service';
+import { BookService } from './book.service';
 import { CreateBookDTO } from './dto/create-book.dto';
 import { ApiBearerAuth, ApiUseTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 
 @ApiBearerAuth()
 @ApiUseTags('books')
 @Controller('books')
-export class BooksController {
-    constructor(private booksService: BooksService) { }
+export class BookController {
+    constructor(private booksService: BookService) { }
 
     @ApiOperation({title: 'Get all books'})
     @ApiResponse({status: 200, description: 'Return all books.'})
     @Get()
     async getBooks() {
-        const books = await this.booksService.getBooks();
-        return books;
+        return await this.booksService.findAll();
     }
 
-    @Get(':bookID')
-    async getBook(@Param('bookID') bookID) {
-        const book = await this.booksService.getBook(bookID);
-        return book;
+    @Get(':id')
+    async getBook(@Param('id') id) {
+        return await this.booksService.findById(id);
     }
 
     @Post()
     async addBook(@Body() createBookDTO: CreateBookDTO) {
-        const book = await this.booksService.addBook(createBookDTO);
-        return book;
+        return await this.booksService.create(createBookDTO);
     }
 
     @Delete()
     async deleteBook(@Query() query) {
-        const books = await this.booksService.deleteBook(query.bookID);
-        return books;
+        console.log(query);
+        return await this.booksService.delete(query.id);
     }
 }
