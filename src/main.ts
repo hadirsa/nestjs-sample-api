@@ -16,7 +16,13 @@ async function bootstrap() {
         .build();
     const document = SwaggerModule.createDocument(app, options);
     SwaggerModule.setup('/docs', app, document);
-
+    app.enableCors({
+        origin: [
+            'http://localhost:4200', // angular
+            'http://localhost:3000', // react
+            'http://localhost:8080', // react-native
+        ],
+    });
     await app.listen(3001);
 }
 
