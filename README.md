@@ -1,6 +1,6 @@
  
  
-> ### NestJS + Postgres sample api with JWT and typeorm.
+ ### NestJS + Postgres sample api with JWT and typeorm.
 
 
 ----------
