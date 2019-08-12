@@ -1,6 +1,6 @@
  
  
-> ### NestJS (Express + Postgres) sample api (CRUD, auth, advanced patterns, etc) with JWT and typeorm.
+> ### NestJS + Postgres sample api with JWT and typeorm.
 
 
 ----------
