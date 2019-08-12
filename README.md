@@ -24,10 +24,6 @@ Copy config file and set JsonWebToken secret key
 The example codebase uses [Typeorm](http://typeorm.io/) with a postgres database.
 
 Create a new postgres database with the name `nestjshadirsa` (or the name you specified in the ormconfig.json)
-
-Copy Typeorm config example file for database settings
-
-    cp ormconfig.json.example ``
     
 Set postgres database settings in ormconfig.json
 
@@ -66,10 +62,10 @@ On application start, tables for all entities will be created.
 
 # Authentication
  
-This applications uses JSON Web Token (JWT) to handle authentication. The token is passed with each request using the `Authorization` header with `Token` scheme. The JWT authentication middleware handles the validation and authentication of the token. Please check the following sources to learn more about JWT.
+This applications uses JSON Web Token (JWT) to handle authentication. 
 
 ----------
  
 # Swagger API docs
 
-This example repo uses the NestJS swagger module for API documentation. [NestJS Swagger](https://github.com/nestjs/swagger) - [www.swagger.io](https://swagger.io/)        
+This repo uses the NestJS swagger module for API documentation. [NestJS Swagger](https://github.com/nestjs/swagger) - [www.swagger.io](https://swagger.io/)        
