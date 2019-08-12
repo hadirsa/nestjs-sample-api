@@ -23,7 +23,7 @@ Copy config file and set JsonWebToken secret key
 
 The example codebase uses [Typeorm](http://typeorm.io/) with a postgres database.
 
-Create a new postgres database with the name `nestjshadirsa` (or the name you specified in the ormconfig.json)
+Create a new postgres database with the name `nestjshadirsa`
     
 Set postgres database settings in ormconfig.json
 
