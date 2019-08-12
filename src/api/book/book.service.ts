@@ -1,15 +1,11 @@
-import {HttpException, Injectable, Logger} from '@nestjs/common';
-//import { BOOKS } from '../../shared/mocks/books.mock';
-import {BOOKS} from "../shared/mocks/books.mock";
-import {Repository, DeleteResult} from 'typeorm';
+import {Injectable, Logger} from '@nestjs/common';
+import {DeleteResult, Repository} from 'typeorm';
 import {InjectRepository} from '@nestjs/typeorm';
 import {BookEntity} from "./book.entity";
 
 @Injectable()
 export class BookService {
     private readonly logger = new Logger(BookService.name);
-
-    books = BOOKS;
 
     constructor(
         @InjectRepository(BookEntity)

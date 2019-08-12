@@ -1,6 +1,6 @@
 import { Controller, Get, Param, Post, Body, Query, Delete } from '@nestjs/common';
 import { BookService } from './book.service';
-import { CreateBookDTO } from './dto/create-book.dto';
+import { BookDto } from './book.dto';
 import { ApiBearerAuth, ApiUseTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 
 @ApiBearerAuth()
@@ -22,7 +22,7 @@ export class BookController {
     }
 
     @Post()
-    async addBook(@Body() createBookDTO: CreateBookDTO) {
+    async addBook(@Body() createBookDTO: BookDto) {
         return await this.booksService.create(createBookDTO);
     }
 

@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
 import { CoreModule } from './core/core.module';
-import { BookModule } from "./books/bookModule";
+import { BookModule } from "./api/book/bookModule";
 
 @Module({
     imports: [
@@ -21,3 +21,4 @@ export class ApplicationModule {
     constructor(private readonly connection: Connection) {
     }
 }
+

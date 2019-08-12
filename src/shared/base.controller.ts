@@ -14,3 +14,4 @@ export class BaseController {
         return decoded.id;
     }
 }
+
